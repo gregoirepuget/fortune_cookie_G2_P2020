@@ -1,14 +1,14 @@
 body{
-background:url("../images/fortune-cookie-vector-illustrations.jpg") no-repeat #ffd778 center top;
-margin:0;
-color:#FFFFFF;
-font-family: Arial, sans-serif;
+  background:url("../images/fortune-cookie-vector-illustrations.jpg") no-repeat #ffd778 center top;
+  margin:0;
+  color:#FFFFFF;
+  font-family: Arial, sans-serif;
   text-align:center;
 }
 
 
 #fortune_button{
-margin-top:200px;
+  margin-top:200px;
   display: inline-block;
   padding:10px 20px;
   background:#a12812;
@@ -18,15 +18,15 @@ margin-top:200px;
 }
 
 #fortune_cookie{
-   margin:160px auto 0px auto;
-    width:500px;
+  margin:160px auto 0px auto;
+  width:500px;
 }
 
 #fortune_cookie p{
-    background-color: #FFFFFF;
-    color:black;
-    padding:5px;
-    margin-bottom:0px;
+  background-color: #FFFFFF;
+  color:black;
+  padding:5px;
+  margin-bottom:0px;
 }
 #fortune_cookie span{
   float:right;
@@ -44,16 +44,75 @@ margin-top:200px;
   display:block;
 }
 #cookie_form input{
-padding:5px;  
+  padding:5px;  
 }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+#nom{
+  position:fixed;
+  top:0;
+  left:0;
+  background: #FFFFFF;
+}
+#nom p{
+  margin:0;
+  padding: 10px 20px;
+  color:#a12812;
+}
+#nom #nomContent{
+  position:relative;
+}
+#nom span{
+  color:red;
+  font-size:9px;
+  position:absolute;
+  top:2px;
+  right:2px;
+  cursor:pointer;
+}
+
+
+#menuContent{
+  position:fixed;
+  top:0;
+  right:-300px;
+  width:300px;
+  height:100%;
+  background: #FFFFFF;
+  transition:all 0.5s ease-in;
+}
+
+#menuContent.open{
+  right:0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
