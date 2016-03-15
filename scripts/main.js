@@ -5,18 +5,12 @@ $(document).ready(function(){
   $('#cookie_form').on("submit",function(e){
     e.preventDefault();
     var nombre=$("#numberField").val();
-    
-    $("#fortune_cookie").empty();
-    $("#fortune_cookie").append("<p>"+citations[nombre]["citation"]+"</p>");
-    $("#fortune_cookie").append("<span>"+citations[nombre]["auteur"]+"</span>");
+    addCitation(nombre);
   });
   
   $("#numberField").on("blur",function(){
     var nombre=$(this).val();
-    
-    $("#fortune_cookie").empty();
-    $("#fortune_cookie").append("<p>"+citations[nombre]["citation"]+"</p>");
-    $("#fortune_cookie").append("<span>"+citations[nombre]["auteur"]+"</span>");
+    addCitation(nombre);
     
   });
   
@@ -26,11 +20,8 @@ $(document).ready(function(){
     event.preventDefault();
   
     var nombre= getTirage(citations.length);
-    
-    $("#fortune_cookie").empty();
-    $("#fortune_cookie").append("<p>"+citations[nombre]["citation"]+"</p>");
-    $("#fortune_cookie").append("<span>"+citations[nombre]["auteur"]+"</span>");
-  
+    addCitation(nombre);
+   
   });
   
   
@@ -38,5 +29,20 @@ $(document).ready(function(){
   {
     return Math.floor(Math.random()*limit);
   }
+  
+  function addCitation(nombre)
+  {
+    $("#fortune_cookie").empty();
+    $("#fortune_cookie").append("<p>"+citations[nombre]["citation"]+"</p>");
+    $("#fortune_cookie").append("<span>"+citations[nombre]["auteur"]+"</span>");
+  }
+  
+  
+  
+  
+  
+  
+  
+  
   
 });
