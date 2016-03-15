@@ -2,6 +2,16 @@ $(document).ready(function(){
 
   $("#numberField").attr("max",citations.length-1);
   
+  var historiqueCitation=localStorage.getItem("citations");
+  if(historiqueCitation != null)
+  {
+      historiqueCitation=JSON.parse(historiqueCitation);
+  }
+  else
+  {
+      historiqueCitation= new Array();
+  }
+  
   var listOptions='';
   for(var i=0; i < citations.length; i++)
   {
@@ -46,6 +56,10 @@ $(document).ready(function(){
   
   function addCitation(nombre)
   {
+    
+    historiqueCitation.push(nombre);
+    localStorage.setItem("citations",JSON.stringify(historiqueCitation));
+    
     $("#fortune_cookie").empty();
     $("#fortune_cookie").append("<p>"+citations[nombre]["citation"]+"</p>");
     $("#fortune_cookie").append("<span>"+citations[nombre]["auteur"]+"</span>");
@@ -74,8 +88,13 @@ $(document).ready(function(){
     $("#menuContent").toggleClass("open");
   });
   
+  /*citations=JSON.stringify(citations);
+  localStorage.setItem("citations",citations);
   
   
+  newCitations=localStorage.getItem('citations');
+  newCitations=JSON.parse(newCitations);
+  */
   
   
   
